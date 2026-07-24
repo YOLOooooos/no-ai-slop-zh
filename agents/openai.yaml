@@ -1,4 +1,4 @@
 interface:
-  display_name: "/no-ai-slop"
-  short_description: "Remove AI slop while preserving the writer's personal voice."
-  default_prompt: "Use $no-ai-slop to remove AI patterns from this draft while preserving my personal voice."
+  display_name: "中文去 AI 味"
+  short_description: "去除中文套话、空话和模板感，同时保留作者原有语气与事实边界"
+  default_prompt: "使用 $no-ai-slop-zh 编辑这段中文，去掉 AI 腔并保留我的个人表达。"
