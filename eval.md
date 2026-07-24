@@ -1,42 +1,49 @@
-# No AI slop eval
+# 中文去 AI 味评测
 
-Use this after the rewrite. Answer each check with pass or fail. If any check fails, fix the draft before returning it.
+完成编辑后逐项回答“通过”或“不通过”。任何一项不通过，都先修改，再向用户返回结果。
 
-For detect requests, make sure the response names each pattern found with a quoted line and a short fix, without rewriting the draft.
+检测任务只检查报告格式：必须列出模式名称、原文片段、问题和简短修改方向；模式名称应优先使用 `SKILL.md` 已定义的 30 类，未覆盖的问题统一标为“其他：具体问题”；不得重写全文、计算 AI 概率或断言作者身份。
 
-## Editing principles
+## 原意和声音
 
-1. Does the edit preserve the user's point without adding claims, examples, stats, quotes, or opinions?
-2. Does it preserve the writer's distinctive vocabulary, cadence, bluntness, humor, uncertainty, digressions, and level of polish?
-3. Does it leave strong human sentences alone instead of rewriting them for consistency or making every paragraph equally tidy?
-4. Is the amount of cutting proportional to the actual slop, with no aggressive compression that strips out character?
-5. Does the draft lead with what the reader needs while keeping personal setup that adds context, tension, or character?
-6. Are points front-loaded where that improves clarity without forcing every unit into the same structure?
-7. Do sentences earn their place, with concrete facts, protected details, and direct verbs where the draft supports them?
-8. Does the draft use active voice with human subjects where possible?
-9. Does the edit keep useful edge and preserve structure unless the structure was hurting the piece?
-10. Are genuinely tangled sentences fixed while clear spoken cadence, fragments, and changes in pace remain intact?
+1. 是否保留原文的核心观点、事实、条件和语气，没有新增数据、案例、出处、观点或情绪？
+2. 是否保留作者有辨识度的用词、节奏、口语程度、直接程度、幽默、犹豫和不规则之处？
+3. 是否放过本来就自然、具体、清楚的句子，没有为了统一风格全部重写？
+4. 修改量是否与原文问题相称，没有把有个性的草稿压缩成通用短文？
+5. 是否保留了能提供背景、关系或人物感的个人表达？
 
-## Words to cut
+## 清楚和具体
 
-1. Are banned words, filler phrases, often-empty adverbs, and inflated claims removed unless quoted as examples?
+1. 读者能否快速判断谁在做什么、为什么做、结果是什么？
+2. 是否优先保留或突出人物、动作、时间、数字、条件、原因和结果？
+3. 是否把“进行、实现、开展、完成相关工作”等名词化表达改成了直接动词？
+4. 是否处理了指代不清、主语缺失、定语过长和关系混乱的句子？
+5. 是否只拆分真正难读的长句，同时保留自然的长短变化？
+6. 是否没有用原文不存在的细节去替换空话？
 
-## Patterns to cut
+## 中文 AI 腔
 
-1. Are binary contrasts, negative listings, rhetorical setups, and throat-clearing openers removed?
-2. Are faux-insight setups, colon reveals, superficial analysis, fake-strong verbs, synonym cycling, dramatic fragments, and robotic rhythm fixed?
-3. Are importance puffery and weasel attribution replaced with plain facts and named sources, or flagged for the user when no source exists?
-4. Are fake-profound kicker lines deleted instead of rewritten into better metaphors?
-5. Are summary-recap endings cut so the piece ends on a concrete point, takeaway, or next action?
-6. Is formatting slop removed: Emoji headings, decorative bold, bullets that should be prose, headers over tiny sections?
-7. Are colons sentence case unless grammar, a proper noun, a title, or code requires otherwise?
-8. Are em dashes used sparingly: Usually none in short copy, and only 1-2 in longer drafts when they clearly help?
+1. 是否处理了无实际逻辑需要的“不是……而是……”、否定排比和“不仅……更……”？
+2. 是否删除了无信息的清嗓开场、伪洞察铺垫和空泛时代背景？
+3. 是否打破了机械的“首先、其次、最后”、固定三点式和段落对称？
+4. 是否处理了口号排比、动词堆叠、形容词堆叠和同义反复？
+5. “赋能、助力、打造、推动、闭环、生态、体系、价值”等词是否都有具体对象或机制？
+6. 是否删除了“充分体现、深刻揭示、有力彰显、标志着”等无依据分析？
+7. 是否把“里程碑、全新篇章、至关重要”等重要性膨胀改成具体影响，或直接删除？
+8. “研究表明、专家认为、业内普遍认为、数据显示”等归因是否有可核对来源？
+9. “相关部门、有关人员、各方、我们”等主体在需要明确责任时是否已经写清？
+10. 同一对象是否使用稳定名称，没有为避免重复而轮换同义词？
+11. 是否处理了冒号揭晓、自问自答、机械短句和标点制造的伪力度？
+12. 是否删除了没有依据的读心、结构性安慰和情绪升华？
+13. 是否根据场景压缩了过度礼貌、公文缓冲和模板化转折？
+14. 是否删除了复述式结尾和伪深刻金句，让文章停在事实、判断或行动上？
+15. 是否移除了装饰性 emoji、加粗、小标题和不必要列表，同时保留真正有助于查找的结构？
 
-## Final read
+## 最后朗读
 
-1. Was the edit checked directly against this file without requiring separate editor and evaluator agents?
-2. Does the draft avoid robotic symmetry, repeated sentence shapes, and stacked punchy fragments?
-3. Would the writer recognize the edited draft as their own voice?
-4. Would the edited draft sound natural if read to a sharp colleague?
-5. Does the final output include the full edited draft and a short **What changed** section?
-6. For detect requests, does the response name each pattern with a quoted line and a short fix, without rewriting, scoring, or claiming AI authorship?
+1. 全文读出来是否像真实的人在该场景中会说的话？
+2. 句式和段落是否有自然变化，而不是刻意追求整齐或“金句感”？
+3. 作者是否仍会认出这是自己的文字？
+4. 修改稿是否比原稿更清楚，但没有变得更空、更圆滑或更像公关稿？
+5. 返回内容是否包含完整修改稿和简短、具体的 **修改说明**？
+6. 检测任务是否只报告可核对的文本模式，没有猜测 AI 作者身份？
