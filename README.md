@@ -1,64 +1,65 @@
-# No AI slop
+# 中文去 AI 味（no-ai-slop-zh）
 
-This skill removes 20+ patterns of AI slop from your writing and it can also help you detect slop as well.
+这是 [petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop) 的中文适配版，用于编辑中文草稿，或检测文本中具体的 AI 腔、套话、空话和模板结构。
 
-## What it catches
+它不是英文规则的逐句翻译。中文版本重新整理了 30 类常见问题，包括：
 
-The patterns it detects include:
+| 模式 | 常见表现 |
+|---|---|
+| 强行二元对立 | “不是……而是……” |
+| 清嗓式开场 | “值得注意的是……” |
+| 伪洞察铺垫 | “真正关键的是……” |
+| 空泛时代背景 | “在数字化浪潮下……” |
+| 默认三段式 | “首先、其次、最后……” |
+| 口号式排比 | “有高度、有力度、有温度” |
+| 动词堆叠 | “持续推动完善提升” |
+| 空洞强动词 | “赋能业务、驱动增长” |
+| 虚假深入分析 | “充分体现了、深刻揭示了” |
+| 重要性膨胀 | “开启全新篇章” |
+| 模糊归因 | “研究表明、专家认为” |
+| 结构性安慰 | “你不是做不到，只是……” |
+| 机械短句 | “就这样。很简单。也很重要。” |
+| 复述式结尾 | “综上所述……” |
+| 情绪升华 | 从普通问题突然写到勇气、成长或热爱 |
 
-| Pattern | Smells like |
-|---------|-------------|
-| Binary contrasts | "It's not X. It's Y." |
-| Throat-clearing openers | "Here's the thing..." |
-| Faux-insight setups | "What nobody tells you..." |
-| Colon reveals | "The best part: it learns." |
-| Superficial analysis | "...highlighting the team's commitment" |
-| Importance puffery | "marks a pivotal moment" |
-| Weasel attribution | "experts agree," "studies show" |
-| Fake-strong verbs | "serves as a centralized hub" |
-| Synonym cycling | the agent, then the assistant, then the tool |
-| Negative listing | "Not a X. Not a Y. A Z." |
-| Dramatic fragmentation | "That's it. That's the whole thing." |
+除去这些模式，Skill 还会检查主语和动作是否清楚、事实是否具体、长句是否难读，并尽量保留作者本人的词汇、节奏、态度和不规则表达。
 
-It also enforces the fundamentals that make writing good: Lead with the point when it helps, use active voice, untangle hard-to-follow sentences, and prefer concrete numbers over abstractions.
+## 安装
 
-## Install
+将下面这句话发给 Claude Code、Codex 或其他支持 Skill 的工具：
 
-Paste this into Claude Code, Codex, or your favorite AI harness:
-
-"Install this skill globally: [https://github.com/petergyang/no-ai-slop](https://github.com/petergyang/no-ai-slop)"
-
-## Use
-
-**1. Edit a draft.** Paste it and invoke the skill:
-
-```
-/no-ai-slop
-
-[your draft]
+```text
+全局安装这个 Skill：https://github.com/YOLOooooos/no-ai-slop-zh
 ```
 
-You get back the edited draft plus a short What changed section. The skill makes the minimum effective edit, then checks its own work against [eval.md](eval.md).
+## 使用
 
-**2. Detect slop.** Ask whether a piece reads as AI:
+### 编辑草稿
 
+```text
+/no-ai-slop-zh
+
+[粘贴草稿]
 ```
-/no-ai-slop is this AI slop?
 
-[the text]
+返回完整修改稿和简短的“修改说明”。Skill 会做必要的最小修改，并使用 [eval.md](eval.md) 自检。
+
+### 只检测，不改写
+
+```text
+/no-ai-slop-zh 检查这段文字有哪些 AI 腔，不要改写
+
+[粘贴文本]
 ```
 
-You get every pattern it found each with the quoted line.
+返回每一处命中的模式、原文片段、问题和修改方向。它不会计算 AI 概率，也不会猜测作者是不是 AI。
 
-## Files
+## 文件
 
-1. `SKILL.md`: The editing rules and workflow.
-2. `eval.md`: Pass/fail checks the skill runs on its own edits.
+1. `SKILL.md`：中文编辑规则与执行流程。
+2. `eval.md`：修改后的自检清单。
+3. `agents/openai.yaml`：Skill 的界面名称、简介和默认提示词。
 
-## Who made this
+## 来源与许可
 
-This is one skill from my personal AI operating system. The full library, including my courses and workflows, lives at [Behind the Craft](https://behindthecraft.com).
-
-## License
-
-MIT
+本项目基于 Peter Yang 的 [no-ai-slop](https://github.com/petergyang/no-ai-slop) 修改，保留原项目的 MIT License。
